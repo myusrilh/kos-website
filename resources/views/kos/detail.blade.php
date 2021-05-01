@@ -105,7 +105,9 @@
             @csrf
             <div class="modal-body">
             <h5>Silahkan pilih tanggal</h5>
+            @if(!empty(Auth::user()))
             <input type="number" name="id_pencari" class="form-control" value="{{Auth::user()->id}}" hidden>
+            @endif
             <input type="number" name="id_kos" class="form-control" value="{{$kos->id}}" hidden>
             <input type="number" name="biaya_sewa" class="form-control" value="{{$kos->harga}}" hidden>
             <label for="mulai_sewa">Mulai Sewa</label>
